@@ -79,6 +79,21 @@ return {
               }
           })
       end,
+      ["pyright"] = function()
+          lspconfig["pyright"].setup({
+              cmd = { "pyright-langserver", "--stdio" },
+              filetypes = { "python" },
+              settings = {
+                  python = {
+                  analysis = {
+                      autoSearchPaths = true,
+                      diagnosticMode = "openFilesOnly",
+                      useLibraryCodeForTypes = true
+                  }
+                }
+              }
+          })
+      end,
       ["lua_ls"] = function()
         -- configure lua server (with special settings)
         lspconfig["lua_ls"].setup({
