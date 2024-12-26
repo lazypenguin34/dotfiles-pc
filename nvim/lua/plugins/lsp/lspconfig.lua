@@ -71,12 +71,16 @@ return {
       ["clangd"] = function()
           lspconfig["clangd"].setup({
               capabilities = capabilities,
-              offsetEncoding = { "utf-8", "utf-16" },
-              textDocument = {
-                  completion = {
-                        editsNearCursor = true
-                  }
-              }
+          })
+      end,
+      ["html"] = function()
+          lspconfig["html"].setup({
+              capabilities = capabilities,
+          })
+      end,
+      ["ts_ls"] = function()
+          lspconfig["ts_ls"].setup({
+              capabilities = capabilities,
           })
       end,
       ["pyright"] = function()
